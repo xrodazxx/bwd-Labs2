@@ -1,69 +1,44 @@
-const path = require('path'); // Импортируем модуль "path" для работы с путями файлов
-
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 module.exports = {
-
-   entry: './src/index.js', // Точка входа для сборки проекта
-
-
-   output: {
-
-       filename: 'bundle.js', // Имя выходного файла сборки
-
-       path: path.resolve(__dirname, 'dist'), // Путь для выходного файла сборки
-
-   },
-
-
-   module: {
-
-       rules: [
-
-           {
-
-               test: /\.css$/, // Регулярное выражение для обработки файлов с расширением .css
-
-               use: ['style-loader', 'css-loader'], // Загрузчики, используемые для обработки CSS-файлов
-
-           },
-
-       ],
-
-   },
-
-
-   plugins: [
-
-       new HtmlWebpackPlugin({
-
-           template: './src/index.html',
-
-           inject: true,
-
-           chunks: ['index'],
-
-           filename: 'index.html'
-
-       }),
-
-   ],
-
-
-   devServer: {
-
-       static: {
-
-           directory: path.join(__dirname, 'dist'), // Каталог для статики
-
-       },
-
-       open: true, // Автоматически открывать браузер
-
-   },
-
-
-   mode: 'development', // Режим сборки
-
+    entry: './src/index.js',
+    output: {
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist'),
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
+            },
+        ],
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            inject: true,
+            filename: 'index.html',
+        }), new HtmlWebpackPlugin({
+            template: './src/about.html',
+            inject: true,
+            filename: 'about.html',
+        }),new HtmlWebpackPlugin({
+            template: './src/taskList.html',
+            inject: true,
+            filename: 'taskList.html',
+        }), new HtmlWebpackPlugin({
+            template: './src/404.html',
+            inject: true,
+            filename: '404.html',
+        }),
+    ],
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        open: true,
+    },
+    mode: 'development',
 };
