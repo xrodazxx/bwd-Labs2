@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crunch</title>
+    <link rel="icon" href="crunch.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="mainPage.css">
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+    <div class="burger-menu" onclick="toggleMenu(this)">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="dropdownmenu">
+        <nav>
+            <ul>
+                <li class="active"><a href="#">Главная</a></li>
+                <li><a href="404.html">Проекты</a></li>
+                <li><a href="taskList.html">Список задач</a></li>
+                <li><a href="about.html">О приложении</a></li>
+            </ul>
+        </nav>
+        <div class="site-title">Crunch</div>
+    </div>
+
+    <!-- Новый блок для фоновой картинки  -->
+    <div class="background">
+        <div class="center-text">Future with Crunch</div>
+    </div>
+
+    <script src="toggle.js"></script>
+    <script src="bundle.js"></script>
+    <script>
+        function toggleMenu(x) {
+            x.classList.toggle("change"); 
+            document.querySelector(".dropdownmenu ul").classList.toggle("show");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: #1c1c22;
+    color: #FFFFFF;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.site-title {
+    color: white; /* Цвет текста */
+    font-size: 24px; /* Размер шрифта */
+    font-weight: bold; /* Установка жирного начертания */
+    padding-right: 10px;
+}
+
+.dropdownmenu {
+    display: flex; /* Добавлено для горизонтального выравнивания */
+    justify-content: space-between; /* Распределение пространства между элементами */
+    align-items: center; /* Вертикальное центрирование */
+    width: 100%;
+    background: #0f84d1;
+    padding: 10px; /* Добавлено для отступа */
+}
+
+/* Основные стили для меню */
+.dropdownmenu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: flex-start; /* Элементы списка по левому краю */
+}
+
+.dropdownmenu li {
+    position: relative;
+}
+
+.dropdownmenu a {
+    display: block;
+    padding: 10px 25px;
+    color: #FFFFFF;
+    font: bold 12px/20px sans-serif;
+    text-align: center;
+    text-decoration: none;
+    background: #683eacfb;
+    transition: all .25s ease;
+}
+
+.dropdownmenu li:hover a {
+    background: #000000;
+}
+
+/* Подменю */
+#submenu {
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    visibility: hidden;
+    z-index: 1;
+    background-color: #153d33;
+}
+
+li:hover ul#submenu {
+    opacity: 1;
+    visibility: visible;
+}
+
+#submenu li {
+    width: 100%;
+}
+
+#submenu a {
+    padding: 10px;
+    background-color: #153d33;
+    white-space: nowrap;
+}
+
+#submenu a:hover {
+    background: #DF4B05;
+}
+
+/* Стили для мобильных устройств */
+@media (max-width: 768px) {
+    /* Скрываем основное меню и включаем бургер-иконку */
+    .dropdownmenu ul {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(164, 175, 113, 0.705);
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        padding-top: 60px; /* Отодвигаем меню от верхней части экрана */
+        z-index: 2;
+    }
+
+    /* Отображаем меню при клике */
+    .dropdownmenu ul.show {
+        display: flex;
+    }
+
+    .dropdownmenu a {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+
+    /* Стили для бургер-иконки */
+    .burger-menu {
+        font-size: 30px;
+        color: #040fac;
+        cursor: pointer;
+        padding: 10px;
+        position: fixed;
+        top: 10px;
+        left: 10px;
+        z-index: 3;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Линии бургер-иконки */
+    .bar {
+        width: 30px;
+        height: 4px;
+        background-color: #e6e6e6;
+        transition: 0.4s;
+    }
+
+    /* Меню-крестик при раскрытии */
+    .change .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 5px);
+    }
+    .change .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .change .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -5px);
+    }
+
+     h2{
+        text-align: center;
+        color: white;
+        font-size: medium;
+    } 
+}
+
+nav ul li.active a {
+    color: rgb(255, 123, 0);
+    pointer-events: none;
+    /* Запрет на взаимодействие с активной ссылкой */
+}

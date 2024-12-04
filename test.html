@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="mainPage.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список задач</title>
+</head>
+<body>
+    <div id="task-list">
+        <div>
+            <h2>Планируется</h2>
+            <ul id="planned-tasks"></ul>
+            <button onclick="openModal('planned')">Добавить задачу</button>
+        </div>
+        <div>
+            <h2>В процессе</h2>
+            <ul id="in-progress-tasks"></ul>
+            <button onclick="openModal('in-progress')">Добавить задачу</button>
+        </div>
+        <div>
+            <h2>Сделано</h2>
+            <ul id="completed-tasks"></ul>
+            <button onclick="openModal('completed')">Добавить задачу</button>
+        </div>
+    </div>
+
+    <div id="modal" style="display:none;">
+        <h2>Добавить задачу</h2>
+        <input type="text" id="task-input" placeholder="Введите задачу" />
+        <button onclick="addTask()">Добавить</button>
+        <button onclick="closeModal()">Отмена</button>
+    </div>
+
+    <script>
+        let currentCategory = '';
+
+        function openModal(category) {
+            currentCategory = category;
+            document.getElementById('modal').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('task-input').value = '';
+        }
+
+        function addTask() {
+            const taskText = document.getElementById('task-input').value.trim();
+            if (taskText) {
+                const li = document.createElement('li');
+                li.textContent = taskText;
+
+                if (currentCategory === 'planned') {
+                    document.getElementById('planned-tasks').appendChild(li);
+                } else if (currentCategory === 'in-progress') {
+                    document.getElementById('in-progress-tasks').appendChild(li);
+                } else if (currentCategory === 'completed') {
+                    document.getElementById('completed-tasks').appendChild(li);
+                }
+
+                closeModal();
+            } else {
+                alert("Пожалуйста, введите текст задачи.");
+            }
+        }
+    </script>
+</body>
+</html>

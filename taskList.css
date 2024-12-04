@@ -1,0 +1,174 @@
+.task-board {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.column {
+    width: 30%;
+    padding: 10px;
+    background-color: #1c345f;
+    border-radius: 5px;
+}
+
+.column h2 {
+    text-align: center;
+    color: white;
+}
+
+.task {
+    background-color: #15143b;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 8px rgba(255, 250, 250, 0.2); /* Добавлена тень */
+    transition: box-shadow 0.3s ease-in-out; /* Плавный эффект появления тени */
+}
+
+.task:hover {
+    box-shadow: 0px 6px 12px rgba(255, 250, 250, 0.2); /* Увеличенная тень при наведении */
+}
+
+.task-buttons {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.task button {
+    padding: 5px 10px;
+    font-size: 12px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+}
+
+.move-btn {
+    background-color: #007bff;
+}
+
+.delete-btn {
+    background-color: #ff4d4d;
+}
+
+.add-task-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.modal input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+}
+
+.modal button {
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.save-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+}
+
+.close-btn {
+    background-color: #e0e0e0;
+    border: none;
+    border-radius: 3px;
+}
+@media (max-width: 768px) {
+    .task-board {
+        flex-direction: column; /* Перестраиваем колонки вертикально */
+        align-items: center; /* Центрируем колонки */
+    }
+
+    .column {
+        width: 90%; /* Колонки занимают почти всю ширину экрана */
+        margin-bottom: 20px; /* Отступы между колонками */
+    }
+}
+
+@media (max-width: 480px) {
+    .task {
+        flex-direction: column; /* Задачи располагаются вертикально */
+        align-items: flex-start; /* Элементы внутри задачи выравниваются влево */
+    }
+
+    .task-buttons {
+        justify-content: flex-start; /* Кнопки располагаются в начале */
+        gap: 10px; /* Увеличиваем промежуток между кнопками */
+    }
+
+    .task button {
+        font-size: 14px; /* Увеличиваем шрифт кнопок для читаемости */
+        padding: 8px; /* Больше пространства для кликов */
+    }
+
+    .modal-content {
+        width: 90%; /* Масштабируем модальное окно */
+    }
+}
+.search-container {
+    display: flex;
+    justify-content: center; /* Центровка по горизонтали */
+    align-items: center;
+    margin: 20px 0; /* Отступ сверху и снизу */
+}
+
+#searchInput {
+    width: 300px; /* Ширина поля */
+    padding: 10px; /* Внутренние отступы */
+    border: 1px solid #ccc; /* Рамка */
+    border-radius: 5px; /* Скругление углов */
+    font-size: 16px; /* Размер текста */
+    margin-right: 10px; /* Отступ между полем и кнопкой */
+}
+
+.search-container button {
+    padding: 10px 20px; /* Размер кнопки */
+    background-color: #4CAF50; /* Цвет кнопки */
+    color: white; /* Цвет текста */
+    border: none; /* Убираем рамку */
+    border-radius: 5px; /* Скругление углов */
+    cursor: pointer; /* Указатель */
+    font-size: 16px; /* Размер текста */
+}
+
+.search-container button:hover {
+    background-color: #45a049; /* Изменение цвета при наведении */
+}

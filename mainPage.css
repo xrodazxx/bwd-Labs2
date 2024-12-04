@@ -1,0 +1,98 @@
+/* Общие стили */
+html, body {
+    height: 100%;
+    margin: 0; /* Убираем отступы */
+    padding: 0; /* Убираем паддинги */
+    display: flex;
+    flex-direction: column;
+    background-color: #1c1c22;
+    color: #FFFFFF;
+}
+
+/* Сброс стандартных отступов */
+* {
+    box-sizing: border-box;
+}
+
+/* Контейнер для всего содержимого */
+.container {
+    padding: 60px;
+    flex: 1;
+}
+
+/* Футер */
+footer {
+    background-color: #21301e;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Стили для ссылок футера */
+footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 0.8em;
+    color: #ccc;
+}
+
+.center-image {
+    display: block;
+    margin: 20px auto; /* Центрирование изображения и отступ сверху и снизу */
+    max-width: 25%; /* Для адаптивности на разных экранах */
+    height: auto;
+}
+
+/* Стили для фона */
+.background {
+    position: relative;
+    height: 100vh; /* Высота экрана */
+    background-image: url('crunch.jpg'); /* Замените на путь к вашей картинке */
+    background-size: cover; /* Увеличение изображения, чтобы заполнить экран */
+    background-position: center; /* Центрирование изображения */
+    background-repeat: no-repeat; /* Запрет повторения */
+}
+
+/* Центрирование текста */
+.center-text {
+    position: absolute;
+    top: 50%; /* Смещение вниз на 50% */
+    left: 50%; /* Смещение вправо на 50% */
+    transform: translate(-50%, -50%); /* Центрирование текста */
+    font-size: 3rem; /* Размер текста */
+    color: white; /* Белый цвет текста */
+    text-align: center; /* Выравнивание по центру */
+    font-family: 'Arial', sans-serif; /* Шрифт */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Тень текста */
+}
+
+header {
+    margin: 0; /* Убираем внешний отступ */
+    padding: 0; /* Убираем внутренний отступ */
+    background-color: #21301e; /* Цвет фона */
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Центрируем элементы по горизонтали */
+    align-items: flex-start; /* Выравнивание по верхнему краю */
+    height: 100px; /* Высота header */
+}

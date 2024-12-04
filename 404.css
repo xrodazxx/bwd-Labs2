@@ -1,0 +1,25 @@
+html{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #1c1c22;
+    color: #FFFFFF;
+}
+
+.center-container {
+    display: flex; /* Включаем Flexbox */
+    flex-direction: column; /* Располагаем элементы в колонку */
+    justify-content: center; /* Центрируем по вертикали */
+    align-items: center; /* Центрируем по горизонтали */
+    height: 100vh; /* Устанавливаем высоту контейнера на 100% высоты вьюпорта */
+    background-color: #1c1c22; /* Цвет фона контейнера для контраста */
+    color: white; /* Цвет текста для лучшей видимости */
+}
+
+.circular-image {
+    border-radius: 50%; /* Устанавливает радиус скругления на 50% для круглой формы */
+    width: 150px; /* Установите желаемую ширину */
+    height: 150px; /* Установите желаемую высоту */
+    object-fit: cover; /* Обеспечивает обрезку изображения, чтобы оно заполнило круг */
+}

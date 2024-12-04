@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О приложении Crunch</title>
+    <link rel="icon" href="crunch.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="mainPage.css">
+</head>
+<body>
+    <div class="burger-menu" onclick="toggleMenu(this)">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+    <div class="dropdownmenu">
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="404.html">Проекты</a></li>
+                <li><a href="taskList.html">Список задач</a></li>
+                <li class="active"><a href="#">О приложении</a></li>
+            </ul>
+        </nav>
+        <div class="site-title">Crunch</div>
+    </div>
+    
+    <div class="content">
+      <h1 class="contentHead">О приложении</h1>
+      
+      <h2>Приветсвуем в Crunch!<br/><br/>
+        Crunch — это приложение, созданное для тех, кому нужна  эффективность. С его помощью вы можете структурировать свои задачи, выстраивать  приоритеты, отслеживать прогресс для более продуктивной работы.<br/><br/>
+        
+         Crucnh основывается на то , что каждый может легко и эффективно управлять своей деятельностью. Приложение позволяет создавать отдельные проекты, разбивать их на задачи и подзадачи, а также настраивать уведомления о приближающихся сроках. Теперь вы сможете планировать как личные дела, так и работу над крупными проектами, сохраняя при этом ясность и фокус.<br/><br/>
+
+        Основные возможности Crucnh :<br/>
+        - Создание и управление задачами <br/>
+        - Гибкая настройка приоритетов <br/>
+        - Уведомления о сроках выполнения<br/>
+        - Дружелюбный интерфейс <br/><br/>
+
+        Приложение идеально подходит для всех, кто хочет организовать свои задачи: будь то профессиональная работа или личные планы. </h2>
+
+    </div>
+
+    <script>
+    function toggleMenu(x) {
+        x.classList.toggle("change"); 
+        document.querySelector(".dropdownmenu ul").classList.toggle("show");
+    }</script>
+    <script src="bundle.js"></script>
+</body>
+</html>

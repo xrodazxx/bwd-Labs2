@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crunch - Задачи</title>
+    <link rel="icon" href="crunch.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="taskList.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="mainPage.css">
+</head>
+<body>
+    <div class="burger-menu" onclick="toggleMenu(this)">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="dropdownmenu">
+        <nav>
+            <ul>
+                <li><a href="index.html">Главная</a></li>
+                <li><a href="404.html">Проекты</a></li>
+                <li class="active"><a href="#">Список задач</a></li>
+                <li><a href="about.html">О приложении</a></li>
+            </ul>
+        </nav>
+        <div class="site-title">Crunch</div>
+    </div>
+
+    <h1 style="text-align: center;">Менеджер задач Crunch</h1>
+    <button class="add-task-btn" onclick="openModal()">Добавить задачу</button>
+
+    <!--<input type="text" id="searchInput" placeholder="Поиск задач" oninput="searchTasks()">-->
+    <div class="search-container">
+        <input type="text" id="searchInput" placeholder="Поиск задач..." oninput="searchTasks()">
+        <button onclick="resetSearch()">Сброс</button>
+    </div>
+    
+
+    <div class="task-board">
+        <div class="column" id="to-do">
+            <h2>Планируется</h2>
+        </div>
+        <div class="column" id="in-progress">
+            <h2>В процессе</h2>
+        </div>
+        <div class="column" id="done">
+            <h2>Решено</h2>
+        </div>
+    </div>
+
+    <div class="modal" id="taskModal">
+        <div class="modal-content">
+            <h2>Новая задача</h2>
+            <input type="text" id="taskInput" placeholder="Введите описание задачи">
+            <br>
+            <button class="save-btn" onclick="addTask()">Сохранить</button>
+            <button class="close-btn" onclick="closeModal()">Закрыть</button>
+        </div>
+    </div>
+
+    <script src="taskManager.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugs rooms</title>
+    <link rel="icon" href="crunch.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="404.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="mainPage.css">
+</head>
+<body>
+    <div class="burger-menu" onclick="toggleMenu(this)">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <div class="dropdownmenu">
+        <nav>
+            <ul>
+                <li><a href="index.html">Проекты</a></li>
+                <li class="active">
+                    <a href="#">Проекты</a>
+                </li>
+                <li><a href="taskList.html">Список задач</a></li>
+                <li><a href="about.html">О приложении</a></li>
+            </ul>
+        </nav>
+        <div class="site-title">Crunch</div>
+    </div>
+    <div class="center-container">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQb5Q4vuTFZeLn9pUN3bwCSsp468QO7hksjPg&s" alt="Ошибка 404" class="circular-image">
+        <h1>error 404</h1>
+        <script>function toggleMenu(x) {
+            x.classList.toggle("change"); 
+            document.querySelector(".dropdownmenu ul").classList.toggle("show");
+        }</script>
+        <script src="bundle.js"></script>
+</body>
+</html>
